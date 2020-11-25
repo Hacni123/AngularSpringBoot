@@ -3,4 +3,8 @@ export class Hotel {
     firstName?: string;
     lastName?: string;
     emailId?: string;
+    phone?: number;
+    address?: string;
+    position?: string;
+    password?: string;
 }
