@@ -26,11 +26,12 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
    gotoEmployeeList(){
-     this.router.navigate(['/employees']);
+     this.router.navigate(['/employee-list']);
    }
 
   onSubmit(){
     this.saveEmploee();
+    this.gotoEmployeeList();
   }
 
 }

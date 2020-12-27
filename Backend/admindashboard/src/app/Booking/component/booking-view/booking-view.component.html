@@ -1,0 +1,183 @@
+<app-header></app-header>
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header"  >
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <h5 class="text-center text-red"> Booking Number : {{bookings.reviewId}}</h5>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+<div>
+    <div class="container">
+        <h5 class="text-center text-primary"> Booking Details</h5>
+        <div class="row">
+          <div class="col-sm-6" style="background-color:rgba(240, 248, 248, 0.973);">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col ">{{bookings.reviewId}}</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Email</th>
+                    <td>{{bookings.reviewId}}</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">Gender</th>
+                    <td>Jacob</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">Check In Date</th>
+                    <td>Larry</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <div class="col-sm-6" style="background-color:rgba(240, 248, 248, 0.973);">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">ID Number</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">ID Number</th>
+                    <td>Mark</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">Address</th>
+                    <td>Jacob</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">Check Out Date</th>
+                    <td>Larry</td>
+                   
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+     
+</div>
+</div>
+<!-- /.content-wrapper -->
+<div>
+    <div class="container">
+        <h5 class="text-center text-primary"> Room Details</h5>
+        <div class="row">
+          <div class="col-sm-6" style="background-color:rgba(240, 248, 248, 0.973);">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Room Name</th>
+                    <th scope="col ">{{bookings.reviewId}}</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Max Adult</th>
+                    <td>Mark</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">Max Children</th>
+                    <td>Jacob</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">Room Facility</th>
+                    <td>Larry</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <div class="col-sm-6" style="background-color:rgba(240, 248, 248, 0.973);">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Order Final Status</th>
+                    <th scope="col">ID Number</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Admin Remarks</th>
+                    <td>Mark</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">No of beds</th>
+                    <td>Jacob</td>
+                    
+                  </tr>
+                  <tr>
+                    <th scope="row">Room Image</th>
+                    <td>Larry</td>
+                   
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+     
+</div>
+</div>
+
+<div>
+    <div class="container">
+        <h5 class="text-center text-primary"> Admin Remarks</h5>
+        <div class="row">
+          <div class="col-sm-6" style="background-color:rgba(240, 248, 248, 0.973);">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col ">{{bookings.reviewId}}</th>
+                    
+                  </tr>
+                </thead>
+                
+              </table>
+          </div>
+          <div class="col-sm-6" style="background-color:rgba(240, 248, 248, 0.973);">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">ID Number</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                    <br><br>
+                  <tr>
+                    <button class="btn btn-danger">Take Action</button>
+                  </tr>
+                  <br><br>
+                </tbody>
+              </table>
+          </div>
+        </div>
+     
+</div>
+</div>
+<!-- Control Sidebar -->
+<app-footer></app-footer>
+<router-outlet></router-outlet>

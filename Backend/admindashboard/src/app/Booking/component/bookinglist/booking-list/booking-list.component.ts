@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Booking } from 'src/app/Booking/model/booking';
 import { BookingService } from 'src/app/Booking/services/booking.service';
 
@@ -9,9 +10,10 @@ import { BookingService } from 'src/app/Booking/services/booking.service';
 })
 export class BookingListComponent implements OnInit {
 
+  myDate= Date.now();
   bookings? : Booking[];
 
-  constructor(private bookingService : BookingService) { }
+  constructor(private bookingService : BookingService, private router : Router) { }
 
   ngOnInit(): void {
     this.getBookings();
@@ -21,5 +23,9 @@ export class BookingListComponent implements OnInit {
     this.bookingService.getBookingList().subscribe(data => {
       this.bookings=data;
     });
+  }
+  
+  viewBooking(reviewId: string){
+    this.router.navigate(['view-booking', reviewId]);
   }
 }

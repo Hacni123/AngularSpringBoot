@@ -11,7 +11,13 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule} from '@angular/common/http';
 import { BookingListComponent } from './Booking/component/bookinglist/booking-list/booking-list.component';
 import { CreateEmployeeComponent } from './Employee/component/create-employee/create-employee.component';
-import{FormsModule} from '@angular/forms';
+import{FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { UpdateEmployeeComponent } from './Employee/component/update-employee/update-employee.component';
+
+import { BookingViewComponent } from './Booking/component/booking-view/booking-view.component';
+import { NewBookingComponent } from './Booking/component/new-booking/new-booking.component';
+import { CancelledBookingComponent } from './Booking/component/cancelled-booking/cancelled-booking.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +27,11 @@ import{FormsModule} from '@angular/forms';
     SidebarComponent,
     FooterComponent,
     BookingListComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    UpdateEmployeeComponent,
+    BookingViewComponent,
+    NewBookingComponent,
+    CancelledBookingComponent
   ],
   imports: [
     BrowserModule,

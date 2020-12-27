@@ -20,25 +20,28 @@
                 <thead>
                     <tr>
                         <th> First Name</th>
-                        <th> Last Name </th>
                         <th> Email </th>
                         <th> Contact Number</th>
-                        <th> Address</th>
-                        <th> Position</th>
-                        <th> Password</th>
-                        <th> Actions </th>
+                        <th> review Number</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let employee of employees" >
-                        <td> {{ employee.firstName }} </td>
-                        <td> {{ employee.lastName }} </td>
-                        <td> {{ employee.emailId }} </td>
-                        <td> {{ employee.phone }} </td>
-                        <td> {{ employee.address }} </td>
-                        <td> {{ employee.position }} </td>
-                        <td> {{ employee.password }} </td>
-            
+                        <td> {{ employee.bookId }} </td>
+                        <td> {{ employee.bookName }} </td>
+                        <td> {{ employee.author }} </td>
+                        <td>
+                          <tr *ngFor="let booking of employee.bookings ">
+                            {{ booking.reviewTitle }}
+                          </tr>
+                          </td>
+    
+                        <td>
+                          
+                          <button (click) = "updateEmployee(employee.bookId)" class="btn btn-info">Update</button>
+                          <button (click) = "deleteEmployee(employee.bookId)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -6,6 +6,10 @@ import { BookingListComponent } from './Booking/component/bookinglist/booking-li
 import { CreateEmployeeComponent } from './Employee/component/create-employee/create-employee.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { UpdateEmployeeComponent } from './Employee/component/update-employee/update-employee.component';
+import { NewBookingComponent } from './Booking/component/new-booking/new-booking.component';
+import { CancelledBookingComponent } from './Booking/component/cancelled-booking/cancelled-booking.component';
+import { BookingViewComponent } from './Booking/component/booking-view/booking-view.component';
 
 const routes: Routes = [
   {
@@ -25,6 +29,18 @@ const routes: Routes = [
   },
   {
     path:'header',component:HeaderComponent
+  },
+  {
+    path:'update-employee/:id',component:UpdateEmployeeComponent
+  },
+  {
+    path:'new-booking',component:NewBookingComponent
+  },
+  {
+    path:'cancelled-booking',component:CancelledBookingComponent
+  },
+  {
+    path:'view-booking/:id',component:BookingViewComponent
   }
 ];
 

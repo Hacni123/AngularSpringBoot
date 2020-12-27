@@ -5,7 +5,7 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <h2> Booking List</h2>
+          <h2> New Booking </h2>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -26,18 +26,14 @@
                         <th> Customer ID </th>
                         <th> Check In</th>
                        
-                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor = "let booking of bookings" >
                         <td> {{ booking.reviewId }} </td>
                         <td> {{ booking.reviewTitle }} </td>
-                    
+                        
                         <td> {{ booking.rating }} </td>
-                        <td>
-                          <button (click) = "viewBooking(booking.rating)" class="btn btn-info">View</button>
-                        </td>
                     </tr>
                 </tbody>
             </table>
