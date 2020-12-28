@@ -1,0 +1,60 @@
+<app-header></app-header>
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <h2> Booking List</h2>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        
+
+        <div class="row mb-12">
+          <div class="col-md-12">
+            
+            <table class = "table table-striped">
+                <thead>
+                    <tr>
+                        <th> Check In </th>
+                        <th> Check Out</th>
+                        <th> Status </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let booking of bookings" >
+                        <td> {{ booking.check_in }} </td>
+                        <td> {{ booking.check_out }} </td>
+                        <td> {{ booking.action }} </td>
+                        <td>{{ booking.customerName }}</td>
+                          
+                    </tr>
+                </tbody>
+            </table>
+            
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+  <app-footer></app-footer>
+  <router-outlet></router-outlet>

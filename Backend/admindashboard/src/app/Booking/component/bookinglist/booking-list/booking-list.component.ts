@@ -25,7 +25,7 @@ export class BookingListComponent implements OnInit {
     });
   }
   
-  viewBooking(reviewId: string){
-    this.router.navigate(['view-booking', reviewId]);
+  viewBooking(order_id: number){
+    this.router.navigate(['view-booking', order_id]);
   }
 }

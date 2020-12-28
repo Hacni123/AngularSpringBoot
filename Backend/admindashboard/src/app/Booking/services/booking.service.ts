@@ -8,19 +8,19 @@ import { Booking } from '../model/booking';
 })
 export class BookingService {
 
-  private baseURL = "http://localhost:8080/api/review";
+  private baseURL = "http://localhost:8080/api/v1/orders";
   constructor(private httpClient : HttpClient) { }
 
   getBookingList(): Observable<Booking[]>{
     return this.httpClient.get<Booking[]>(`${this.baseURL}`);
   }
 
-  getBookingById(reviewId:number): Observable<Booking>{
-    return this.httpClient.get<Booking>(`${this.baseURL}/${reviewId}`);
+  getBookingById(order_id:number): Observable<Booking>{
+    return this.httpClient.get<Booking>(`${this.baseURL}/${order_id}`);
   }
   
-  updateBooking(reviewId: number, hotel : Booking): Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}/${reviewId}`,hotel);
+  updateBooking(order_id: number, hotel : Booking): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${order_id}`,hotel);
   }
   
 }

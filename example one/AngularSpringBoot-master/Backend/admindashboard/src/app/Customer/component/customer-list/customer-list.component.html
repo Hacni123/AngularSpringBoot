@@ -1,0 +1,64 @@
+<app-header></app-header>
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <h2> Booking List</h2>
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        
+
+        <div class="row mb-12">
+          <div class="col-md-12">
+            
+            <table class = "table table-striped">
+                <thead>
+                    <tr>
+                        <th> Customer Name </th>
+                        <th> Email</th>
+                        <th> Contact Number </th>
+                        <th> Gender </th>
+                        <th> Address </th>
+                        <th> ID Number </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let customer of customers" >
+                        <td> {{ customer.customer_name }} </td>
+                        <td> {{ customer.phone }} </td>
+                        <td> {{ customer.email }} </td>
+                        <td> {{ customer.gender }} </td>
+                        <td> {{ customer.address }} </td>
+                        <td> {{ customer.id_num }} </td>
+            
+                    </tr>
+                </tbody>
+            </table>
+            
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+  <app-footer></app-footer>
+  <router-outlet></router-outlet>

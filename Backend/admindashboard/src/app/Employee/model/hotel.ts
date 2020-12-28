@@ -1,8 +1,10 @@
-import { Booking } from 'src/app/Booking/model/booking';
 export class Hotel {
-    bookId!: number;
-    bookName?: string;
-    author?: string;
-    bookings?: Booking[];
+    user_id!: number;
+    address?: string;
+    email?: string;
+    first_name?: string;
+    last_name?: string;
+    phone?: number;
+    position?: string;
     
 }

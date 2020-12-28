@@ -9,21 +9,21 @@ import { HotelService } from '../../services/hotel.service';
   styleUrls: ['./update-employee.component.sass']
 })
 export class UpdateEmployeeComponent implements OnInit {
-  bookId!: number;
+  user_id!: number;
   employee : Hotel= new Hotel();
   constructor(private hotelService : HotelService,
     private route : ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-   this.bookId=this.route.snapshot.params['id'];
-    this.hotelService.getEmployeeById(this.bookId).subscribe(data =>{
+   this.user_id=this.route.snapshot.params['id'];
+    this.hotelService.getEmployeeById(this.user_id).subscribe(data =>{
       console.log(data);
        this.employee=data;
     }, error => console.log(error));
   }
   
   saveEmploee(){
-    this.hotelService.updateEmployee(this.bookId,this.employee).subscribe(data =>{
+    this.hotelService.updateEmployee(this.user_id,this.employee).subscribe(data =>{
       console.log(data);
       this.gotoEmployeeList();
     },

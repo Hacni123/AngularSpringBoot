@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Hotel } from 'src/app/Employee/model/hotel';
-import { Booking } from 'src/app/Booking/model/booking';
 import { HotelService } from 'src/app/Employee/services/hotel.service';
-import { BookingService } from 'src/app/Booking/services/booking.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,9 +11,8 @@ import { BookingService } from 'src/app/Booking/services/booking.service';
 export class EmployeeListComponent implements OnInit {
 
   employees? : Hotel[];
-  bookings? : Booking[];
 
-  constructor(private hotelService : HotelService,private bookingService : BookingService,
+  constructor(private hotelService : HotelService,
     private router : Router) { }
 
   ngOnInit(): void {
@@ -26,20 +23,17 @@ export class EmployeeListComponent implements OnInit {
     this.hotelService.getEmployeeList().subscribe(data => {
       this.employees=data;
     });
-    this.hotelService.getEmployeeList().subscribe(data => {
-      this.employees=data;
-    });
     
   }
 
-  updateEmployee(bookId:number){
-    this.router.navigate(['update-employee',bookId]);
+  updateEmployee(user_id:number){
+    this.router.navigate(['update-employee',user_id]);
   }
 
-  deleteEmployee(bookId:number)
+  deleteEmployee(user_id:number)
   {
     this.router.navigate(['/employee-list']);
-    this.hotelService.deleteEmployee(bookId).subscribe(data => {
+    this.hotelService.deleteEmployee(user_id).subscribe(data => {
       console.log(data);
       this.getEmployees();
       

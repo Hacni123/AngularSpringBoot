@@ -8,7 +8,7 @@ import { Observable} from 'rxjs';
 })
 export class HotelService {
 
-  private baseURL = "http://localhost:8080/api/book";
+  private baseURL = "http://localhost:8080/api/employees";
   constructor(private httpClient : HttpClient) { }
 
   getEmployeeList(): Observable<Hotel[]>{
@@ -19,15 +19,15 @@ export class HotelService {
     return this.httpClient.post(`${this.baseURL}`,employee);
   }
 
-  getEmployeeById(bookId:number): Observable<Hotel>{
-    return this.httpClient.get<Hotel>(`${this.baseURL}/${bookId}`);
+  getEmployeeById(user_id:number): Observable<Hotel>{
+    return this.httpClient.get<Hotel>(`${this.baseURL}/${user_id}`);
   }
   
-  updateEmployee(bookId: number, hotel : Hotel): Observable<Object>{
-    return this.httpClient.put(`${this.baseURL}/${bookId}`,hotel);
+  updateEmployee(user_id: number, hotel : Hotel): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${user_id}`,hotel);
   }
 
-  deleteEmployee(bookId:number): Observable<Object>{
-    return this.httpClient.delete(`${this.baseURL}/${bookId}`);
+  deleteEmployee(user_id:number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURL}/${user_id}`);
   }
 }
