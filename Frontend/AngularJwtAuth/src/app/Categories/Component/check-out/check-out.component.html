@@ -1,0 +1,81 @@
+<br>
+<br>
+<br>
+<div *ngIf="info.token; else loggedOut" >
+<div class="row" >
+    <div class="col-50">
+      <div class="container">
+        <form action="/action_page.php">
+  
+          <div class="row">
+            <div class="col-50">
+              <h3>Order Details</h3>
+              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+              <input type="text" id="fname" name="firstname"  [(ngModel)]="users.name">
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email"  [(ngModel)]="users.email">
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address"  [(ngModel)]="users.address">
+              <label for="city"><i class="fa fa-institution"></i> Contact Number</label>
+              <input type="text" id="phone" name="phone"  [(ngModel)]="users.phone">
+    
+              <div class="row" >
+                <div class="col-50">
+                  <label for="state">Order Date</label>
+                  <input type="date" id="date" name="date">
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <input type="submit" value="Continue to checkout" class="btn">
+        </form>
+      </div>
+    </div>
+  
+    <div class="col-50">
+      <div class="container">
+        <h4>Cart
+          <span class="price" style="color:black">
+            <i class="fa fa-shopping-cart"></i>
+            <b>4</b>
+          </span>
+        </h4>
+        
+        <p *ngFor="let cartItem of cartItems"><a href="#">{{ cartItem.name }}</a> <span class="price">{{ cartItem.price | currency: 'LKR'}}</span></p>
+        
+        <hr>
+        <p>Total Price: <span class="price" style="color:black"><b>{{ totalPrice | currency: 'LKR' }}</b></span></p>
+      </div>
+    </div>
+    
+  </div>
+ 
+</div>
+<div>
+<ng-template #loggedOut>
+  <p>Please login. To Proceed the Check Out.</p>
+</ng-template>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Id</label>
+    <input type="number" class="form-control" id="idd"
+    [(ngModel)]="info.cakeid" name="idd">
+</div>
+  <div class="form-group">
+    <label>Date</label>
+    <input type="date" class="form-control" id="author"
+    [(ngModel)]="info.order_date" name="date">
+</div>
+
+<div class="form-group">
+  <label>Status</label>
+  <input type="text" class="form-control" id="bookName"
+  [(ngModel)]="info.status" name="bookName">
+</div>
+
+   
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>
+<router-outlet></router-outlet>

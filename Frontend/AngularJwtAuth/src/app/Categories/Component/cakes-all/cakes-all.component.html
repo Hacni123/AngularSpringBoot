@@ -1,0 +1,46 @@
+<br>
+<br>
+<br>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+                
+                <app-categories></app-categories>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" *ngFor="let cake of pageOfItems">                     
+                        <div class="card h-100">
+                            <a routerLink="/cakes-all/{{cake.id}}">
+                                <img class="card-img-top img-responsive" [src]="cake.image" height="250" width="100">
+                              </a>
+                              <div class="card-body">
+                                <h4 class="card-title">
+                                  <a routerLink="/cakes-all/{{cake.id}}">{{cake.name}}</a>
+                                </h4>
+                                <h5>{{cake.price | currency: 'LKR'}}</h5>
+                                <p class="card-text text-truncate">{{cake.description}}</p>
+                              </div>
+                              <div class="card-footer">
+                                <button class="btn btn-primary float-right" (click)="addToCart(cake)">Add Cart</button>
+                              </div>
+                        </div>
+                    </div>
+                    <div *ngIf="cakes?.length == 0" class="col-md-12 alert alert-warning mt-1">
+                        No Cakes Types found
+                      </div>
+                </div>
+              <jw-pagination [items]="cakes"
+                        (changePage)="pageClick($event)" 
+                        [pageSize]="pageSize"></jw-pagination>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+
+

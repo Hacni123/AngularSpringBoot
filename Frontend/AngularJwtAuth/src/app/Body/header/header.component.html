@@ -1,0 +1,59 @@
+ <!--================Header Menu Area =================-->
+ <header class="header_area">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+           
+                <a class="navbar-brand logo_h" href="index.html">
+                    <img class="logo-1" src="assets/img/logo.png" alt="">
+                    <img class="logo-2" src="assets/img/logo-2.png" alt="">
+                </a>
+                <div class="row">
+                    
+                    <div class="col-md-3">
+                        <br>
+                        <app-search></app-search> 
+                </div>
+                <div class="col-md-8">
+                       
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+                        <li *ngIf="authority === 'user'" class="nav-item">
+                        <a class="nav-link" routerLink="user">User Board</a>
+                        </li>
+                        <li *ngIf="authority === 'admin'" class="nav-item">
+                        <a class="nav-link" routerLink="admin">Admin Board</a>
+                        </li>
+                        <li *ngIf="authority === 'pm'" class="nav-item">
+                        <a class="nav-link" routerLink="pm">PM Board</a>
+                        </li>
+                        
+                        <li class="nav-item active"><a routerLink="/home1" class="nav-link" href="about-us.html">About Us</a></li>
+                        <li class="nav-item"><a *ngIf="!authority" routerLink="/cakes-all" class="nav-link">Order Now</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="book-table.html">Contact Us</a></li>
+                        <li *ngIf="!authority" class="nav-item submenu dropdown">
+                            <a class="nav-link" routerLink="auth/login">Login</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" routerLink="/home1">Your Profile</a></li>
+                            </ul>
+                        </li>
+                         
+                    </ul>
+                </div>
+                </div>
+                <div class="col-md-1">
+                        <br>
+                        <app-cart-status></app-cart-status>
+                </div>
+            </div>     
+                <!-- Brand and toggle get grouped for better mobile display -->
+                
+             
+            
+        </nav>
+    </div>
+</header>
+<!--================Header Menu Area =================-->
+<router-outlet></router-outlet>
